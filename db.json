@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Otto",
+      "lastName": "Singh",
+      "email": "ot@gmail.com",
+      "mobileNumber": "9867822079",
+      "salary": 10000
+    },
+    {
+      "id": "98d0",
+      "firstName": "Shirish",
+      "lastName": "Shetty",
+      "email": "shiroshetty30@gmail.com",
+      "mobileNumber": "09867814079",
+      "salary": 10000
+    },
+    {
+      "id": "0a2b",
+      "firstName": "Shirish",
+      "lastName": "Shetty",
+      "email": "shiroshetty30@gmail.com",
+      "mobileNumber": "09867814079",
+      "salary": 10000
+    },
+    {
+      "id": "d9e9",
+      "firstName": "Kaka",
+      "lastName": "Shetty",
+      "email": "kaka@gmail.com",
+      "mobileNumber": "09867814079",
+      "salary": 2000
+    }
+  ]
+}

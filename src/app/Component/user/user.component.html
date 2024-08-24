@@ -1,0 +1,69 @@
+<div class="container-fluid">
+
+    <form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+      <div class="row">
+        <div class="col">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" [(ngModel)]="user.firstName" name="firstName" placeholder="firstName" aria-label="firstName" id="firstName">
+ 
+        </div>
+        <div class="col">
+          <label for=" lastName" class="form-label">Last Name</label>
+          <input type="text" [(ngModel)]="user.lastName" name="lastName" class="form-control" placeholder="lastName" aria-label=" lastName" id=" lastName">
+        </div>
+        <div class="col"> 
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" [(ngModel)]="user.email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+        </div>
+      </div>
+  
+      <!-- New Row for Mobile Number and Salary -->
+      <div class="row mt-3">
+        <div class="col">
+          <label for="mobileNumber" class="form-label">Mobile Number</label>
+          <input type="tel" [(ngModel)]="user.mobileNumber" name="mobileNumber" class="form-control" id="mobileNumber" placeholder="Mobile Number" aria-label="Mobile Number">
+        </div>
+        <div class="col">
+          <label for="salary" class="form-label">Salary</label>
+          <input type="number" [(ngModel)]="user.salary" name="salary" class="form-control" id="salary" placeholder="Salary" aria-label="Salary">
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary mt-3">{{editMode?'Update':'Save'}}</button>
+      <button type="submit" (click)="OnResetForm()" class="btn btn-primary mt-3">Reset</button>
+    </form>
+  
+  </div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sr.no</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for (item of userList; track $index)
+        {  
+      <tr>
+        
+        <td scope="row">{{item.id}}</td>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.mobileNumber}}</td>
+        <td>{{item.salary}}</td>
+        <td>
+          <button type="button" class="btn btn-warning btn-sm" (click)="OnEdit(item)">Edit</button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="OnDelete(item.id)">Delete</button>
+        </td>
+      </tr>
+        }
+    </tbody>
+  </table>
+  
